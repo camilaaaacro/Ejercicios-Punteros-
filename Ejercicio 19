@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+// Declaración de estructura
+struct Estudiante
+{
+    char nombre[50];
+    int edad;
+    float nota;
+};
+
+int main()
+{
+    Estudiante estudiante;
+
+    // Puntero a estructura
+    Estudiante *ptr;
+
+    // Asignar dirección de memoria
+    ptr = &estudiante;
+
+    cout << "Ingrese el nombre del estudiante: ";
+    cin >> ptr->nombre;
+
+    cout << "Ingrese la edad: ";
+    cin >> ptr->edad;
+
+    cout << "Ingrese la nota: ";
+    cin >> ptr->nota;
+
+    cout << "\nDatos iniciales:" << endl;
+    cout << "Nombre: " << ptr->nombre << endl;
+    cout << "Edad: " << ptr->edad << endl;
+    cout << "Nota: " << ptr->nota << endl;
+
+    // Modificar nota usando puntero
+    cout << "\nIngrese la nueva nota: ";
+    cin >> ptr->nota;
+
+    cout << "\nDatos actualizados:" << endl;
+    cout << "Nombre: " << ptr->nombre << endl;
+    cout << "Edad: " << ptr->edad << endl;
+    cout << "Nueva nota: " << ptr->nota << endl;
+
+    return 0;
+}
