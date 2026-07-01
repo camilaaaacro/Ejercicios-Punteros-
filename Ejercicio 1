@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Función para intercambiar valores usando punteros
+void intercambiar(int *a, int *b)
+{
+    int aux;
+
+    aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
+int main()
+{
+    int num1, num2;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+
+    cout << "\nValores antes del intercambio:" << endl;
+    cout << "Numero 1: " << num1 << endl;
+    cout << "Numero 2: " << num2 << endl;
+
+    // Enviar direcciones de memoria
+    intercambiar(&num1, &num2);
+
+    cout << "\nValores despues del intercambio:" << endl;
+    cout << "Numero 1: " << num1 << endl;
+    cout << "Numero 2: " << num2 << endl;
+
+    return 0;
+}
