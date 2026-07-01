@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+// Funciones utilizando punteros
+
+void sumar(int *a, int *b)
+{
+    cout << "\nLa suma es: " << (*a + *b) << endl;
+}
+
+void restar(int *a, int *b)
+{
+    cout << "\nLa resta es: " << (*a - *b) << endl;
+}
+
+void multiplicar(int *a, int *b)
+{
+    cout << "\nLa multiplicacion es: " << (*a * *b) << endl;
+}
+
+void dividir(float *a, float *b)
+{
+    if(*b != 0)
+    {
+        cout << "\nLa division es: " << (*a / *b) << endl;
+    }
+    else
+    {
+        cout << "\nNo se puede dividir para cero." << endl;
+    }
+}
+
+int main()
+{
+    int num1, num2;
+    int opcion;
+
+    float *p1;
+    float *p2;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+
+    do
+    {
+        cout << "\n===== MENU DE OPERACIONES =====" << endl;
+        cout << "1. Sumar" << endl;
+        cout << "2. Restar" << endl;
+        cout << "3. Multiplicar" << endl;
+        cout << "4. Dividir" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion)
+        {
+            case 1:
+                sumar(&num1, &num2);
+                break;
+
+            case 2:
+                restar(&num1, &num2);
+                break;
+
+            case 3:
+                multiplicar(&num1, &num2);
+                break;
+
+            case 4:
+                p1 = (float*)&num1;
+                p2 = (float*)&num2;
+                dividir(p1, p2);
+                break;
+
+            case 5:
+                cout << "\nPrograma finalizado." << endl;
+                break;
+
+            default:
+                cout << "\nOpcion incorrecta." << endl;
+        }
+
+    } while(opcion != 5);
+
+
+    return 0;
+}
