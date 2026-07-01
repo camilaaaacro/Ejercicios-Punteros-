@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numeros[10];
+    int buscar;
+    int *ptr;
+    bool encontrado = false;
+
+    cout << "Ingrese 10 numeros enteros:" << endl;
+
+    // Ingreso de datos
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "Numero " << i + 1 << ": ";
+        cin >> numeros[i];
+    }
+
+    cout << "\nIngrese el numero que desea buscar: ";
+    cin >> buscar;
+
+    // El puntero apunta al inicio del arreglo
+    ptr = numeros;
+
+    // Buscar utilizando punteros
+    for(int i = 0; i < 10; i++)
+    {
+        if(*(ptr + i) == buscar)
+        {
+            cout << "\nEl numero " << buscar 
+                 << " se encuentra en la posicion " << i + 1 << endl;
+
+            encontrado = true;
+        }
+    }
+
+    if(encontrado == false)
+    {
+        cout << "\nEl numero no se encuentra en el arreglo." << endl;
+    }
+
+    return 0;
+}
