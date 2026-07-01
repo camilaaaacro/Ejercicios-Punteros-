@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numeros[5];
+    int *inicio, *fin;
+    int aux;
+
+    cout << "Ingrese 5 numeros enteros:" << endl;
+
+    // Ingreso de datos
+    for(int i = 0; i < 5; i++)
+    {
+        cout << "Numero " << i + 1 << ": ";
+        cin >> numeros[i];
+    }
+
+    // Punteros al primer y ultimo elemento
+    inicio = &numeros[0];
+    fin = &numeros[4];
+
+    cout << "\nArreglo original:" << endl;
+
+    for(int i = 0; i < 5; i++)
+    {
+        cout << numeros[i] << " ";
+    }
+
+    // Intercambio usando punteros
+    aux = *inicio;
+    *inicio = *fin;
+    *fin = aux;
+
+    cout << "\n\nArreglo despues del intercambio:" << endl;
+
+    for(int i = 0; i < 5; i++)
+    {
+        cout << numeros[i] << " ";
+    }
+
+    return 0;
+}
