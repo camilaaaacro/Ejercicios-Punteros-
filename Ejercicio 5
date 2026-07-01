@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numeros[10];
+    int *ptr;
+    int contadorPares = 0;
+
+    cout << "Ingrese 10 numeros enteros:" << endl;
+
+    // Ingreso de datos
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "Numero " << i + 1 << ": ";
+        cin >> numeros[i];
+    }
+
+    // El puntero apunta al inicio del arreglo
+    ptr = numeros;
+
+    // Recorrido usando punteros
+    for(int i = 0; i < 10; i++)
+    {
+        if(*(ptr + i) % 2 == 0)
+        {
+            contadorPares++;
+        }
+    }
+
+    cout << "\nNumeros ingresados:" << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout << *(ptr + i) << " ";
+    }
+
+    cout << "\n\nCantidad de numeros pares: " << contadorPares << endl;
+
+    return 0;
+}
