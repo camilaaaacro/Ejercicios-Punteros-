@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    int *p1, *p2;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+
+    // Guardar direcciones de memoria en los punteros
+    p1 = &num1;
+    p2 = &num2;
+
+    cout << "\nValores ingresados:" << endl;
+    cout << "Numero 1: " << *p1 << endl;
+    cout << "Numero 2: " << *p2 << endl;
+
+    // Comparación usando punteros
+    if (*p1 > *p2)
+    {
+        cout << "\nEl numero mayor es: " << *p1 << endl;
+    }
+    else if (*p2 > *p1)
+    {
+        cout << "\nEl numero mayor es: " << *p2 << endl;
+    }
+    else
+    {
+        cout << "\nLos dos numeros son iguales." << endl;
+    }
+
+    return 0;
+}
