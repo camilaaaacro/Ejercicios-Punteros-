@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2, suma;
+
+    int *p1, *p2;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+
+    // Asignar las direcciones de memoria a los punteros
+    p1 = &num1;
+    p2 = &num2;
+
+    // Realizar la suma usando punteros
+    suma = *p1 + *p2;
+
+    cout << "\nPrimer numero: " << *p1 << endl;
+    cout << "Segundo numero: " << *p2 << endl;
+
+    cout << "La suma es: " << suma << endl;
+
+    return 0;
+}
