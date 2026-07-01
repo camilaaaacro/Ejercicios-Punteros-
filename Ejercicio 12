@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    char palabra1[50];
+    char palabra2[50];
+    char auxiliar[50];
+
+    char *ptr1;
+    char *ptr2;
+
+    cout << "Ingrese la primera palabra: ";
+    cin >> palabra1;
+
+    cout << "Ingrese la segunda palabra: ";
+    cin >> palabra2;
+
+    // Asignar punteros a las cadenas
+    ptr1 = palabra1;
+    ptr2 = palabra2;
+
+    cout << "\nAntes del intercambio:" << endl;
+    cout << "Palabra 1: " << ptr1 << endl;
+    cout << "Palabra 2: " << ptr2 << endl;
+
+    // Intercambio usando punteros
+    strcpy(auxiliar, ptr1);
+    strcpy(ptr1, ptr2);
+    strcpy(ptr2, auxiliar);
+
+    cout << "\nDespues del intercambio:" << endl;
+    cout << "Palabra 1: " << ptr1 << endl;
+    cout << "Palabra 2: " << ptr2 << endl;
+
+    return 0;
+}
