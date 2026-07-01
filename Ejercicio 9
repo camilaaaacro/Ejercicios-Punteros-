@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero;
+    int factorial = 1;
+
+    int *ptrNumero;
+    int *ptrFactorial;
+
+    cout << "Ingrese un numero entero positivo: ";
+    cin >> numero;
+
+    // Asignar direcciones de memoria a los punteros
+    ptrNumero = &numero;
+    ptrFactorial = &factorial;
+
+    // Calcular factorial utilizando punteros
+    for(int i = 1; i <= *ptrNumero; i++)
+    {
+        *ptrFactorial = *ptrFactorial * i;
+    }
+
+    cout << "\nNumero ingresado: " << *ptrNumero << endl;
+    cout << "El factorial es: " << *ptrFactorial << endl;
+
+    return 0;
+}
