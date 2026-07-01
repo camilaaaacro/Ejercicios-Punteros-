@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// Declaración de estructura
+struct Persona
+{
+    char nombre[50];
+    int edad;
+};
+
+int main()
+{
+    Persona persona;
+
+    // Puntero a estructura
+    Persona *ptr;
+
+    // Asignar dirección de la estructura
+    ptr = &persona;
+
+    cout << "Ingrese el nombre de la persona: ";
+    cin >> ptr->nombre;
+
+    cout << "Ingrese la edad: ";
+    cin >> ptr->edad;
+
+    cout << "\nDatos ingresados:" << endl;
+
+    cout << "Nombre: " << ptr->nombre << endl;
+    cout << "Edad: " << ptr->edad << " anos" << endl;
+
+    return 0;
+}
